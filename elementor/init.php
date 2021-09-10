@@ -139,10 +139,6 @@ final class OBPress_Map_Widget {
 
         add_action('elementor/widgets/widgets_registered', [ $this, 'init_widgets']);
 
-        add_action('elementor/frontend/after_enqueue_styles', [ $this, 'widget_styles']);
-
-		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'widget_scripts' ] );
-
         add_action('elementor/elements/categories_registered', [ $this, 'add_elementor_widget_categories']);
 
     }
@@ -155,22 +151,6 @@ final class OBPress_Map_Widget {
 		// Register widget
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \OBMap() );
 		
-
-	}
-
-	public function widget_styles() {
-		wp_register_style( 'map_css', plugins_url( '/OBPress_Maps/widget/assets/css/map.css') );        
-        wp_enqueue_style('map_css');
-	}
-
-	public function widget_scripts() {
-		wp_register_script('googlemaps', 'https://maps.googleapis.com/maps/api/js?&key=', array(), '', true);
-
-		wp_enqueue_script('googlemaps');
-
-
-		wp_register_script( 'map_js',  plugins_url( '/OBPress_Maps/widget/assets/js/map.js'), array('jquery'), null, true  );
-		wp_enqueue_script('map_js');
 
 	}
 

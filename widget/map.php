@@ -2,6 +2,25 @@
 
 class OBMap extends \Elementor\Widget_Base {
 	
+	public function __construct($data = [], $args = null) {
+		parent::__construct($data, $args);
+
+		wp_register_script('googlemaps', 'https://maps.googleapis.com/maps/api/js?&key=', [ 'elementor-frontend' ], '1.0.0', true );
+		wp_register_script( 'map_js',  plugins_url( '/OBPress_Maps/widget/assets/js/map.js'), [ 'elementor-frontend' ], '1.0.0', true );
+
+		wp_register_style( 'map_css', plugins_url( '/OBPress_Maps/widget/assets/css/map.css') );        
+	}
+
+	public function get_script_depends()
+	{
+		return ['googlemaps', 'map_js'];
+	}
+
+	public function get_style_depends()
+	{
+		return ['map_css'];
+	}
+
 	public function get_name() {
 		return 'OBMap';
 	}
@@ -85,7 +104,11 @@ class OBMap extends \Elementor\Widget_Base {
         $chain = get_option('chain_id');
         $language = get_option('default_language_id');        
 
-        $hotels = BeApi::getHotelSearchForChain($chain, 'true', $language);
+        // $hotels = BeApi::getHotelSearchForChain($chain, 'true', $language);
+        $hotels = BeApi::ApiCache('hotel_search_chain_'.$chain.'_'.$language.'_true', BeApi::$cache_time['hotel_search_chain'], function() use ($chain, $language){
+            return BeApi::getHotelSearchForChain($chain, "true",$language);
+        });
+
 
         $hotelsInfo = [];
 
