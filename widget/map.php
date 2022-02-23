@@ -46,7 +46,8 @@ class OBMap extends \Elementor\Widget_Base {
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
-		$this->add_control(
+
+		$this->add_responsive_control(
 			'obpress_map_image_height',
 			[
 				'label' => __( 'Height', 'OBPress_General_Widgets' ),
@@ -59,15 +60,25 @@ class OBMap extends \Elementor\Widget_Base {
 						'step' => 5,
 					]
 				],
-				'default' => [
-					'unit' => 'px',
+				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'desktop_default' => [
 					'size' => 600,
+					'unit' => 'px',
+				],
+				'tablet_default' => [
+					'size' => 234,
+					'unit' => 'px',
+				],
+				'mobile_default' => [
+					'size' => 234,
+					'unit' => 'px',
 				],
 				'selectors' => [
-					'.obpress-map #map' => 'height: {{SIZE}}{{UNIT}};',
+					'.obpress-map-holder .obpress-map #map' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
+		
 
 		$this->end_controls_section();
 
