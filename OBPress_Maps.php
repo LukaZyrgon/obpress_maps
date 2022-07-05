@@ -2,7 +2,7 @@
 /*
   Plugin name: OBPress Maps by Zyrgon
   Plugin uri: www.zyrgon.net
-  Text Domain: OBPress_SearchBarPlugin
+  Text Domain: OBPress_Maps
   Description: Widgets to OBPress
   Version: 0.0.4
   Author: Zyrgon
@@ -15,7 +15,11 @@ if(get_option('obpress_api_set') == true){
     require_once('elementor/init.php');
 }
 
-
+// add_action( 'init', 'obpress_maps_load_textdomain' );
+ 
+// function obpress_maps_load_textdomain() {
+//     load_plugin_textdomain( 'OBPress_Maps', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
+// }
 
 // TODO, MAKE GIT BRANCH, CONNECT WITH UPDATE CHECKER
 

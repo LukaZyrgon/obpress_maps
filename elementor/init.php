@@ -94,7 +94,7 @@ final class OBPress_Map_Widget {
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor */
 			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'obpress-widget' ),
-			'<strong>' . esc_html__( 'Elementor Test Extension', 'obpress-widget' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor Test Extension', 'OBPress_Maps' ) . '</strong>',
 			'<strong>' . esc_html__( 'Elementor', 'obpress-widget' ) . '</strong>'
 		);
 
@@ -109,7 +109,7 @@ final class OBPress_Map_Widget {
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
 			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'obpress-widget' ),
-			'<strong>' . esc_html__( 'Elementor Test Extension', 'obpress-widget' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor Test Extension', 'OBPress_Maps' ) . '</strong>',
 			'<strong>' . esc_html__( 'Elementor', 'obpress-widget' ) . '</strong>',
 			 self::MINIMUM_ELEMENTOR_VERSION
 		);
@@ -125,7 +125,7 @@ final class OBPress_Map_Widget {
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
 			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'obpress-widget' ),
-			'<strong>' . esc_html__( 'Elementor Test Extension', 'obpress-widget' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor Test Extension', 'OBPress_Maps' ) . '</strong>',
 			'<strong>' . esc_html__( 'PHP', 'obpress-widget' ) . '</strong>',
 			 self::MINIMUM_PHP_VERSION
 		);

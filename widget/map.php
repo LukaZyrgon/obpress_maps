@@ -42,7 +42,7 @@ class OBMap extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'content_section',
 			[
-				'label' => __( 'Content', 'plugin-name' ),
+				'label' => __( 'Content', 'OBPress_Maps' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -50,7 +50,7 @@ class OBMap extends \Elementor\Widget_Base {
 		$this->add_responsive_control(
 			'obpress_map_image_height',
 			[
-				'label' => __( 'Height', 'OBPress_General_Widgets' ),
+				'label' => __( 'Height', 'OBPress_Maps' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -60,13 +60,9 @@ class OBMap extends \Elementor\Widget_Base {
 						'step' => 5,
 					]
 				],
-				'devices' => [ 'desktop', 'tablet', 'mobile' ],
+				'devices' => [ 'desktop', 'mobile' ],
 				'desktop_default' => [
 					'size' => 600,
-					'unit' => 'px',
-				],
-				'tablet_default' => [
-					'size' => 234,
 					'unit' => 'px',
 				],
 				'mobile_default' => [
@@ -85,7 +81,7 @@ class OBMap extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'map_style_section',
 			[
-				'label' => __( 'Map', 'plugin-name' ),
+				'label' => __( 'Map', 'OBPress_Maps' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
